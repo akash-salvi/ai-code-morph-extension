@@ -2,6 +2,12 @@
 
 A Visual Studio Code extension that allows you to update files using AI prompts powered by Google's Gemini API.
 
+<img width="1721" height="994" alt="SCR-20250905-tsoi" src="https://github.com/user-attachments/assets/5c6d21a9-65aa-4cb8-b0f1-0836d3e9a7b0" />
+<img width="1171" height="726" alt="SCR-20250905-ttda" src="https://github.com/user-attachments/assets/97cbcd95-2e81-4446-8be7-60fefaf365d4" />
+<img width="1150" height="1001" alt="SCR-20250905-tuku" src="https://github.com/user-attachments/assets/6edc3034-dae5-4880-9900-6df9e27eb29b" />
+<img width="1725" height="976" alt="SCR-20250905-tvdh" src="https://github.com/user-attachments/assets/5ac1adf0-cf36-4e50-8be4-e78667b77e87" />
+
+
 ## Features
 
 - **Right-click Integration**: Right-click on any file in the Explorer or within the editor to update it with AI.
