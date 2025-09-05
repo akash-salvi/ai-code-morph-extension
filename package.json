@@ -1,0 +1,107 @@
+{
+  "name": "ai-code-morph",
+  "displayName": "AI CodeMorph",
+  "description": "Gemini-powered file editing in one click.",
+  "version": "1.0.1",
+  "publisher": "AkashSalvi",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aicodemorph.updateFile",
+        "title": "AI CodeMorph: Update Current File",
+        "category": "AI CodeMorph"
+      },
+      {
+        "command": "aicodemorph.configure",
+        "title": "AI CodeMorph: Configure Settings",
+        "category": "AI CodeMorph"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "aicodemorph.updateFile",
+          "when": "resourceScheme == file",
+          "group": "modification"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "aicodemorph.updateFile",
+          "when": "editorHasSelection || !editorHasSelection",
+          "group": "modification"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "AI CodeMorph",
+      "properties": {
+        "aicodemorph.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your API key for the Gemini API.",
+          "markdownDescription": "Enter your API key. Get it from [Google AI Studio](https://aistudio.google.com/app/apikey)."
+        },
+        "aicodemorph.ai.model": {
+          "type": "string",
+          "default": "gemini-2.0-flash",
+          "enum": [
+            "gemini-2.5-flash",
+            "gemini-2.5-pro",
+            "gemini-2.0-flash",
+            "gemini-1.5-pro-latest",
+            "gemini-1.5-flash-latest",
+            "gemini-pro"
+          ],
+          "enumDescriptions": [
+            "Latest Flash model: Best balance of speed, cost, and performance.",
+            "Latest Pro model: Most powerful for complex reasoning and tasks.",
+            "Previous Flash model: A fast and reliable option.",
+            "Previous Pro model: Best for very long context and complex tasks.",
+            "Previous Flash model: A fast and versatile option.",
+            "Original Pro model."
+          ],
+          "description": "The Gemini model to use for AI processing."
+        },
+        "aicodemorph.defaultPrompt": {
+          "type": "string",
+          "default": "Improve and optimize this code while maintaining its functionality. Add comments where necessary and follow best practices.",
+          "description": "Default prompt to use for file updates",
+          "editPresentation": "multilineText"
+        },
+        "aicodemorph.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically save the file after AI update"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.8",
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.14.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akash-salvi/ai-code-morph-extension.git"
+  }
+}

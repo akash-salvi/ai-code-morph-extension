@@ -1,0 +1,28 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "es2022", // Use a recent ES version like es2022 or esnext
+    "module": "commonjs", // VS Code extensions typically use commonjs modules
+    "lib": [
+      "es2022", // Include modern ECMAScript features
+      "dom" // Essential for browser-like global types (Response, Blob, Headers, Event types)
+    ],
+    "sourceMap": true,
+    "outDir": "out", // Output directory for compiled JavaScript
+    "rootDir": "src", // Source directory for TypeScript files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Allow default imports from modules with no default export
+    "skipLibCheck": true, // Skip type checking of declaration files (helps with some library issues)
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing for file names
+    "types": [
+      "node" // Include Node.js specific type definitions
+    ]
+  },
+  "include": [
+    "src/**/*.ts" // Include all TypeScript files in the src directory
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules from compilation
+    ".vscode-test" // Exclude VS Code test environment files
+  ]
+}
